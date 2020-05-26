@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects 2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            color:blueviolet;
+            font-size: 20px;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <section class="preview">
+
+    </section>
+
+    <script>
+        let bandInfo;
+        
+        let band = {
+        name: 'Rhapsody of Fire',
+        nationality: 'Italian',
+        genre: 'Melodic Metal',
+        members: 5,
+        formed: 1993,
+        split: false,
+        albums: [
+                { name: 'Symphony of Enchanted Lands', released: 1997},
+                { name: 'Dawn of Victory', released: 2000 }
+                ]
+        };
+
+        bandInfo = `The ${band.name} is a ${band.nationality} ${band.genre} band that is active since ${band.formed}. 
+        Their most famous album is the ${band.albums[0].name}, release in ${band.albums[0].released}`; 
+            
+        // Don't edit the code below here!
+    
+        const section = document.querySelector('section');
+        let para1 = document.createElement('p');
+        para1.textContent = bandInfo;
+        section.appendChild(para1);
+      </script>
+    
+</body>
+</html>

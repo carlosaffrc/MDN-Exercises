@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 3</title>
+
+    <style>
+        
+        * {
+           box-sizing: border-box; 
+        }
+
+        p {
+            color: purple;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <section class="preview">
+
+    </section>
+
+    <script>
+        const section = document.querySelector('section');
+        section.innerHTML = '';
+
+        let myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ];
+        let myString = '';
+
+
+        myArray.pop();
+        myArray.push('Honda', 'Bison');
+
+        for(let i = 0; i < myArray.length; i++){
+            
+            let number = '(' + i + ')';
+            myArray[i] = myArray[i].concat(number) ;
+     
+            }
+
+        myString = myArray.join(' - ');
+
+        let parag1 = document.createElement('p');
+        parag1.textContent = myString;
+        section.appendChild(parag1);
+
+
+    </script>
+    
+</body>
+</html>

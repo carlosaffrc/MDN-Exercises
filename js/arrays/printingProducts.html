@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Products</title>
+</head>
+<body>
+
+    <section class='output'>
+        <ul></ul>
+        <p></p>
+    </section>
+
+    <script>
+        const list = document.querySelector('.output ul');
+        const totalBox = document.querySelector('.output p');
+        let total = 0;
+
+        list.innerHTML = '';
+        totalBox.textContent = '';
+
+        let stringProducts = 'Underpants:6.99, Socks:5.99, T-shirt:14.99, Trousers:31.99, Shoes:23.99';
+        let products = stringProducts.split(',');
+
+        for(let i = 0; i < products.length; i++) {
+            
+            let input = products[i];
+            let inputSplit = input.split(':');
+            
+            let name = inputSplit[0];
+            let price = Number(inputSplit[1]);
+
+            total += price; 
+
+            let itemText = `${name} - ${price}`;
+
+            let listItem = document.createElement('li');
+            listItem.textContent = itemText;
+            list.appendChild(listItem)
+        }
+
+        totalBox.textContent = 'Total: $' + total.toFixed(2);
+
+    </script>
+    
+</body>
+</html>

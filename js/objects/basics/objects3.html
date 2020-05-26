@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="preview"></section>
+
+    <script>
+        let cat1 = {
+          name : 'Bertie',
+          breed : 'Cymric',
+          color : 'white',
+          greeting: function() {
+            console.log(`Hello, said ${this.name} the ${this.breed}`);
+          }
+        }
+
+        let cat2 = {
+          name : 'Willa',
+          breed : 'Korat',
+          color : 'gray',
+          greeting: function() {
+            console.log(`Hello, said ${this.name} the ${this.breed}`);
+          }
+        }
+
+        cat1.greeting();
+        cat2.greeting();
+
+      </script>
+    
+</body>
+</html>

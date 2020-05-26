@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops 3</title>
+    <style> 
+        * {
+            box-sizing: border-box;
+        }
+        p {
+            color: crimson;
+            font-size: 20px;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="preview"></section>
+    
+</body>
+    <script>
+        let i = 3000;
+        let para = document.createElement('p');
+
+        function isPrime(num) {
+        for(let i = 2; i < num; i++) {
+            if(num % i === 0) {
+            return false;
+            }
+        }
+
+            return true;
+        }
+
+        do {
+            if(!isPrime(i)){
+                i--;
+                continue;
+            }
+            
+            para.textContent += i + ' ';
+            i--;
+        } while(i > 0);
+
+        let section = document.querySelector('section');
+        section.appendChild(para);
+    </script>
+
+</html>

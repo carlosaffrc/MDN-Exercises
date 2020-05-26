@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixing Capitalization</title>
+</head>
+<body>
+    <section class="output">
+        <ul>
+
+        </ul>
+    </section>
+
+    <script>
+
+        const list = document.querySelector('.output ul');
+        list.innerHTML = ' ';
+
+        let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+
+        for(let i = 0; i < cities.length; i++){
+            let input = cities[i];
+            let inputLower = input.toLowerCase();
+            let inputFirstUpper = inputLower[0].toUpperCase();
+            let newInput = inputLower.replace(inputLower[0], inputFirstUpper);
+
+            let result = newInput;
+            let listItem = document.createElement('li');
+            listItem.textContent = result;
+            list.appendChild(listItem);
+        }
+
+
+    </script>
+    
+</body>
+</html>

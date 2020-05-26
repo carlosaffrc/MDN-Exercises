@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Strings 4</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            color: darkblue;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="preview">
+        
+    </section>
+
+    <script>
+        let theorem = 'Pythagorean theorem';
+
+        let a = 5;
+        let b = 8;
+
+        let hypot = ((a**2 + b**2)**0.5).toFixed(4);
+
+        let myString = `Using ${theorem}, we can work out that if the two shortest sides of a right-angled 
+        triangle have lengths of ${a} and ${b}, the length of the hypotenuse is ${hypot}.`;
+        
+        const section = document.querySelector('section');
+        section.innerHTML = ' ';
+
+        let parag1 = document.createElement('p')
+        parag1.textContent = myString;
+
+        section.appendChild(parag1);
+
+    </script>
+    
+</body>
+</html>

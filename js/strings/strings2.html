@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings 2</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            color: purple;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <section class="preview">
+
+    </section>
+
+    <script>
+        let quote = 'I do not like green eggs and ham. I do not like them, Sam-I-Am.';
+        let substring = 'green eggs and ham';
+
+        // Add your code here
+ 
+        let quoteLength = quote.length;
+        let substringLength = substring.length;
+        let index = quote.indexOf(substring);
+        let indexSubFinal = index + substringLength;
+        
+        let revisedQuote = quote.slice(0, indexSubFinal + 1);
+
+
+        //Don't edit the code below here!
+
+
+        const section = document.querySelector('section');
+        section.innerHTML = ' ';
+
+        let parag1 = document.createElement('p');
+        let parag2 = document.createElement('p');
+
+        parag1.textContent = `The quote is ${ quoteLength } characters long.`;
+        parag2.textContent = revisedQuote;
+
+        section.appendChild(parag1);
+        section.appendChild(parag2);
+
+
+
+
+    </script>
+    
+</body>
+</html>

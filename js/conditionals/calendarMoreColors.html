@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calendar</title>
+    <style>
+    
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin-left: 30px;
+        }
+
+        label {
+            font-size: 16px;
+            
+        }
+        
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            align-content: flex-start;
+            box-sizing: border-box;
+
+            width: 50%;
+            height: 400px;
+            padding: 0;
+            list-style: none;
+            /* border: 3px solid royalblue; */
+        }
+
+        li {
+            flex: 0 0 150px ;
+            height: 25px;
+            font-weight: 700;
+            margin: 3px 3px 1px 3px;
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h4>Multicolor Calendar</h4>
+    <label for="month">Select month: </label>
+
+    <select id="month">
+        <option value="">--Make a choice--</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+
+    <h1></h1>
+
+    <ul>
+    </ul>
+
+
+    <script>
+        const select = document.querySelector('select');
+        const list = document.querySelector('ul');
+        const h1 = document.querySelector('h1');
+        let days;
+
+        select.onchange = function() {
+        const choice = select.value;
+
+        days =  (choice === 'February'|| choice === 'April' || choice === 'June' ||
+               choice === 'September' || choice === 'November') ? 30 : 31;
+
+            switch(true) {
+                case (choice === 'January' || choice === 'July' ):
+                updateCalendar(days, 'forestgreen', 'darkorange', choice); 
+                    break;
+
+                case (choice === 'February' || choice === 'August' ):
+                    updateCalendar(days, 'darkviolet', 'yellow', choice); 
+                    break;
+                
+                case (choice === 'March' || choice === 'September' ):
+                    updateCalendar(days, 'crimson', 'mediumblue', choice); 
+                    break;
+
+                case (choice === 'April' || choice === 'October' ):
+                    updateCalendar(days, 'darkorange', 'forestgreen', choice);
+                    break;
+
+                case (choice === 'May' || choice === 'November' ):
+                    updateCalendar(days, 'yellow', 'darkviolet', choice); 
+                    break;
+
+                case (choice === 'June' || choice === 'December' ):  
+                    updateCalendar(days, 'mediumblue', 'crimson', choice);
+                    break;
+            }
+
+        // createCalendar(days, choice);
+        }
+
+        function updateCalendar(days, bgColor, textColor, choice) {
+            list.innerHTML = '';
+            h1.textContent = choice;
+            for (let i = 1; i <= days; i++) {
+                const listItem = document.createElement('li');
+                listItem.textContent = i;
+                listItem.style.backgroundColor = bgColor;
+                listItem.style.color = textColor;
+                list.appendChild(listItem);
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

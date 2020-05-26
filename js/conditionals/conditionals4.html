@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals 4</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        } 
+
+        p {
+            color: purple;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+
+    </style>
+
+    <section class="preview">
+
+    </section>
+
+    <script>
+        let machineActive = true;
+        let pwd = 'cheese';
+
+        let machineResult;
+        let pwdResult;
+
+        if(machineActive) {
+            pwdResult = (pwd === 'cheese') ? 'User logged successfuly!': 'Login failed!';
+        } 
+        else {
+            machineResult = 'The machine is turned off. Turn it on to process your login.';
+        }
+
+
+        const section = document.querySelector('section');
+        section.innerHTML = ' ';
+
+        let parag1 = document.createElement('p');
+        let parag2 = document.createElement('p');
+
+        parag1.textContent = machineResult;
+        parag2.textContent = pwdResult;
+
+        section.appendChild(parag1);
+        section.appendChild(parag2);
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

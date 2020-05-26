@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops 1</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        li {
+            color: royalblue;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="preview">
+
+    </section>
+
+    <script>
+        let myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+        
+        const section= document.querySelector('section');
+        let list = document.createElement('ul');
+
+    for(let i = 0; i < myArray.length; i++){
+        let input = myArray[i];
+        const listItem = document.createElement('li');
+        listItem.textContent = input;
+        list.appendChild(listItem);
+    }
+
+    
+    section.appendChild(list);
+    </script>
+    
+</body>
+</html>

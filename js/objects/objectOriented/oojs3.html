@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        p {
+            color: blueviolet;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="preview"></section>
+
+    <script>
+        
+        class Shape {
+            
+            constructor (name, sides, sideLength) {
+                this.name = name;
+                this.sides = sides;
+                this.sideLength = sideLength;
+            }
+        
+            calcPerimeter() {
+                console.log(`${this.name} perimeter: ${this.sides * this.sideLength}`);
+            }
+
+        }
+
+        class Square extends Shape {
+            constructor(sideLength) {
+                super('Square',4, sideLength);
+            }
+
+            calcArea(){
+                console.log(`${this.name} area: ${this.sideLength ** 2}`);
+            }
+        }
+
+        const square = new Square(8);
+        square.calcPerimeter();
+        square.calcArea();
+        
+    </script>
+    
+</body>
+</html>

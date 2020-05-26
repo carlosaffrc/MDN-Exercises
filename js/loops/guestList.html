@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest list</title>
+</head>
+<body>
+
+    <p class="admitted"></p>
+    <p class="refused"></p>
+
+
+    </section>
+
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: ';
+
+        let admString = '';
+        let refString = ''
+
+        let i = 0;
+
+        while(i < people.length) {
+            if(people[i] === 'Phil' || people[i] === 'Lola'){
+                refString += people[i] + ', ' ;
+            }
+            else {
+                admString += people[i] + ', ' ;
+            }
+
+            i++;
+        }
+
+        let lastCol = /, $/g;
+        admString = admString.replace(lastCol,'.');
+        refString = refString.replace(lastCol,'.');
+
+        refused.textContent += refString;
+        admitted.textContent += admString;
+        
+
+    </script>
+    
+</body>
+</html>

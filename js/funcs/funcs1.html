@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcs 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            color: forestgreen;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <section class="preview"></section>
+    
+</body>
+<script>
+    let names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+    let para = document.createElement('p');
+
+    function random(number) {
+        return Math.floor(Math.random()*number);
+    }
+
+    function chooseName(){
+        for(let i = 0; i < names.length; i++) {
+            para.textContent = names[random(i)];
+        }
+    }
+
+    chooseName();
+
+    const section = document.querySelector('section');
+
+    section.appendChild(para);
+  </script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Math 1</title>
+
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        p {
+            color: purple;
+            font-size: 30px;
+            margin: 0.5em 0;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section class="preview">
+        <p>Teste</p>
+    </section>
+
+    <script>
+        
+        let finalResult;
+        let evenOddResult;
+
+        // Add your code here
+
+        let num1 = 4;
+        let num2 = 12;
+        let num3 = 9;
+        let num4 = 6
+
+        let num1Plus2 = num1 + num2;
+        let num4Minus3 = num3 - num4;
+
+        finalResult = num1Plus2 * num4Minus3;
+        evenOddResult = finalResult % 2;
+
+        // Don't edit the code below here!
+
+        const section = document.querySelector('section');
+        section.innerHTML = ' ';
+        
+        let parag1 = document.createElement('p');
+        let parag2 = document.createElement('p');
+
+        let finalResultCheck = finalResult === 48 ? `Yes, well done!` : 
+        `No, it is ${finalResult}`;
+        let evenOddResultCheck = evenOddResult === 0 ? 'The final result is even!' 
+        : 'The final result is odd!';
+
+        parag1.textContent = `Is the finalResult 48? ${ finalResultCheck }`;
+        parag2.textContent = evenOddResultCheck;
+
+        section.appendChild(parag1);
+        section.appendChild(parag2);
+
+    </script>
+
+</body>
+</html>

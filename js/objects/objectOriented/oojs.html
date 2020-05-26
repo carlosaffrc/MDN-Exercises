@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console 
+        (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">
+            What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+       function Person(first, last, age, gender, interests){
+    this.name =  {
+        first: first,
+        last: last
+    };
+
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+
+    this.bio = function() {
+        let genderPron;
+
+        let genderLower = this.gender.toLowerCase();
+        
+        // Changes pronound according to gender
+        if(genderLower === 'female' || genderLower === 'f' ) {
+            genderPron = 'She';
+        }
+        else if(genderLower === 'male' || genderLower === 'm' ) {
+            genderPron = 'He'
+        }
+        else {
+            genderPron = 'No gender';
+        }
+        
+        let interestsText = '';
+
+        let interestLen = this.interests.length;
+
+        // Store all the interest in a single string
+        for(let i = 0; i < interestLen; i++) {
+            if(i === interestLen - 1) {
+                interestsText += 'and ' + this.interests[i] + '.';
+            }
+            else {
+                interestsText += this.interests[i] + ', ';
+            }
+        }
+
+        let bioText = `${this.name.first} ${this.name.last} is ${this.age} years old. ${genderPron} likes ${interestsText}`
+        
+        alert(bioText);
+     };
+
+     this.greeting = function() {
+         alert('Hi! I\'m ' + this.name.first + '.');
+     };
+     
+    }
+ 
+    
+
+    let person1 = new Person('Bob', 'Smith', 32, 'm', ['music', 'skiing']);
+    let person2 = new Person('Sarah', 'Rivera', 29, 'f', ['programming', 'drawing', 'diving']);
+
+    </script>
+</html>
